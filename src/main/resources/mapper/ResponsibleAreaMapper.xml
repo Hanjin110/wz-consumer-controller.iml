@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.ResponsibleAreaMapper">
+    <resultMap id="Map" type="com.example.demo.dao.entity.ResponsibleArea">
+        <id property="id" column="id"/>
+        <result property="responsibleArea" column="responsible_area"/>
+        <result property="state" column="state"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="deleted" column="deleted"/>
+    </resultMap>
+<select id="selectresponsibleArea" resultType="com.example.demo.dao.entity.ResponsibleArea">
+SELECT  id from responsible_area where responsible_area='${responsibleArea}';
+</select>
+</mapper>

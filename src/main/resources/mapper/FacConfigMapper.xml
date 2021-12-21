@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.webuild.alarm.dao.mapper.FacConfigMapper">
+
+    <!-- 列表查询，需要修改where之后的查询条件 -->
+<!--    <select id="queryList" parameterType="map" resultType="com.webuild.alarm.api.entity.FacConfig">-->
+<!--        SELECT-->
+<!--        afc.id,afc.id,afc.event_name,afc.config_type,afc.alarm_level,afc.to_work_order,afc.active_state,afc.remark,afc.del_flag,afc.created_by,afc.created_date,afc.last_updated_by,afc.last_updated_date,afc.property_id,afc.tenant_id,afc.revision-->
+<!--        FROM alarm_fac_config afc-->
+<!--        <trim prefix="where" prefixOverrides="and | or">-->
+
+<!--                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.id != null">and afc.id = #{params.id}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.eventName != null and params.eventName != '' ">and afc.event_name = #{params.eventName}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.configType != null">and afc.config_type = #{params.configType}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.alarmLevel != null and params.alarmLevel != '' ">and afc.alarm_level = #{params.alarmLevel}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.toWorkOrder != null">and afc.to_work_order = #{params.toWorkOrder}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.activeState != null">and afc.active_state = #{params.activeState}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.remark != null and params.remark != '' ">and afc.remark = #{params.remark}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.delFlag != null">and afc.del_flag = #{params.delFlag}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdBy != null">and afc.created_by = #{params.createdBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdDate != null">and afc.created_date = #{params.createdDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedBy != null">and afc.last_updated_by = #{params.lastUpdatedBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedDate != null">and afc.last_updated_date = #{params.lastUpdatedDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.propertyId != null">and afc.property_id = #{params.propertyId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.tenantId != null">and afc.tenant_id = #{params.tenantId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.revision != null and params.revision != '' ">and afc.revision = #{params.revision}</if>-->
+<!--                            -->
+<!--        </trim>-->
+
+<!--    </select>-->
+
+<!--    &lt;!&ndash; 分页查询，需要修改where之后的查询条件 &ndash;&gt;-->
+<!--    <select id="listPage" parameterType="map" resultType="com.webuild.alarm.api.entity.FacConfig">-->
+<!--        SELECT-->
+<!--        afc.id,afc.id,afc.event_name,afc.config_type,afc.alarm_level,afc.to_work_order,afc.active_state,afc.remark,afc.del_flag,afc.created_by,afc.created_date,afc.last_updated_by,afc.last_updated_date,afc.property_id,afc.tenant_id,afc.revision-->
+<!--        FROM alarm_fac_config afc-->
+
+<!--        <trim prefix="where" prefixOverrides="and | or">-->
+<!--                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.id != null">and afc.id = #{params.id}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.eventName != null and params.eventName != '' ">and afc.event_name = #{params.eventName}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.configType != null">and afc.config_type = #{params.configType}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.alarmLevel != null and params.alarmLevel != '' ">and afc.alarm_level = #{params.alarmLevel}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.toWorkOrder != null">and afc.to_work_order = #{params.toWorkOrder}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.activeState != null">and afc.active_state = #{params.activeState}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.remark != null and params.remark != '' ">and afc.remark = #{params.remark}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.delFlag != null">and afc.del_flag = #{params.delFlag}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdBy != null">and afc.created_by = #{params.createdBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdDate != null">and afc.created_date = #{params.createdDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedBy != null">and afc.last_updated_by = #{params.lastUpdatedBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedDate != null">and afc.last_updated_date = #{params.lastUpdatedDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.propertyId != null">and afc.property_id = #{params.propertyId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.tenantId != null">and afc.tenant_id = #{params.tenantId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.revision != null and params.revision != '' ">and afc.revision = #{params.revision}</if>-->
+<!--                            -->
+<!--        </trim>-->
+
+<!--    </select>-->
+
+
+<!--    <resultMap id="facConfigMap" type="com.webuild.alarm.api.entity.FacConfig">-->
+<!--        <id property="id" column="id"/>-->
+<!--                                                                                    <result property="eventName" column="event_name"/>-->
+<!--                                                <result property="configType" column="config_type"/>-->
+<!--                                                <result property="alarmLevel" column="alarm_level"/>-->
+<!--                                                <result property="toWorkOrder" column="to_work_order"/>-->
+<!--                                                <result property="activeState" column="active_state"/>-->
+<!--                                                <result property="remark" column="remark"/>-->
+<!--                                                <result property="delFlag" column="del_flag"/>-->
+<!--                                                <result property="createdBy" column="created_by"/>-->
+<!--                                                <result property="createdDate" column="created_date"/>-->
+<!--                                                <result property="lastUpdatedBy" column="last_updated_by"/>-->
+<!--                                                <result property="lastUpdatedDate" column="last_updated_date"/>-->
+<!--                                                <result property="propertyId" column="property_id"/>-->
+<!--                                                <result property="tenantId" column="tenant_id"/>-->
+<!--                                                <result property="revision" column="revision"/>-->
+<!--                        </resultMap>-->
+</mapper>

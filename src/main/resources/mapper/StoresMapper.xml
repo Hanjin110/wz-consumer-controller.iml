@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.StoresMapper">
+    <resultMap id="Map" type="com.example.demo.dao.entity.Stores">
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="storesName" column="stores_name"/>
+        <result property="storesAddress" column="stores_address"/>
+        <result property="storesHeadPhoto" column="stores_head_photo"/>
+        <result property="storesDisplayPhoto1" column="stores_display_photo1"/>
+        <result property="storesDisplayPhoto2" column="stores_display_photo2"/>
+        <result property="storesDisplayPhoto3" column="stores_display_photo3"/>
+        <result property="storesDisplayPhoto4" column="stores_display_photo4"/>
+        <result property="lng" column="lng"/>
+        <result property="lat" column="lat"/>
+        <result property="state" column="state"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="deleted" column="deleted"/>
+    </resultMap>
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="stores_display_photo1!=null">
+                stores_display_photo1,
+            </if>
+            <if test="stores_display_photo2!=null">
+                stores_display_photo2,
+            </if>
+            <if test="stores_display_photo3!=null">
+                stores_display_photo3,
+            </if>
+            <if test="stores_display_photo4!=null">
+                stores_display_photo4,
+            </if>
+
+        </trim>
+    </sql>
+    <sql id="value">
+        <trim suffixOverrides=",">
+            <if test="storesDisplayPhoto1!=null">
+                #{storesDisplayPhoto1},
+            </if>
+            <if test="storesDisplayPhoto2!=null">
+                #{storesDisplayPhoto2},
+            </if>
+            <if test="storesDisplayPhoto3!=null">
+                #{storesDisplayPhoto3},
+            </if>
+            <if test="storesDisplayPhoto4!=null">
+                #{storesDisplayPhoto4},
+            </if>
+        </trim>
+    </sql>
+<insert id="insert" parameterType="map">
+    insert into stores(<include refid="key"/>) values(<include refid="value"/>) where stores_name='${storesName}';
+</insert>
+<select id="like" resultType="com.example.demo.dao.entity.Stores">
+    select stores_name,stores_address,stores_head_photo,stores_display_photo1,stores_display_photo2,stores_display_photo3,stores_display_photo4,lng,lat from stores
+where stores_name like '%${storesName}%';
+</select>
+
+
+</mapper>

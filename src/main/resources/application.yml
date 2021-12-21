@@ -1,0 +1,17 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /order
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: wesales-user-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/order?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+wechat:
+  app-id: wx477a405d265e1d00
+  appsecret: 07f8f7e5d3080d33af94986dc6ae33f9

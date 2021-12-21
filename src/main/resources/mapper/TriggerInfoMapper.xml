@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.webuild.alarm.dao.mapper.TriggerInfoMapper">
+
+    <!-- 列表查询，需要修改where之后的查询条件 -->
+<!--    <select id="queryList" parameterType="map" resultType="com.webuild.alarm.api.entity.TriggerInfo">-->
+<!--        SELECT-->
+<!--        ati.id,ati.id,ati.alarm_fac_config_id,ati.trigger_type,ati.fac_category_id,ati.trigger_condition,ati.remark,ati.del_flag,ati.created_by,ati.created_date,ati.last_updated_by,ati.last_updated_date,ati.property_id,ati.tenant_id,ati.revision-->
+<!--        FROM alarm_trigger_info ati-->
+<!--        <trim prefix="where" prefixOverrides="and | or">-->
+
+<!--                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.id != null">and ati.id = #{params.id}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.alarmFacConfigId != null">and ati.alarm_fac_config_id = #{params.alarmFacConfigId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.triggerType != null and params.triggerType != '' ">and ati.trigger_type = #{params.triggerType}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.facCategoryId != null">and ati.fac_category_id = #{params.facCategoryId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.triggerCondition != null and params.triggerCondition != '' ">and ati.trigger_condition = #{params.triggerCondition}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.remark != null and params.remark != '' ">and ati.remark = #{params.remark}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.delFlag != null">and ati.del_flag = #{params.delFlag}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdBy != null">and ati.created_by = #{params.createdBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdDate != null">and ati.created_date = #{params.createdDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedBy != null">and ati.last_updated_by = #{params.lastUpdatedBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedDate != null">and ati.last_updated_date = #{params.lastUpdatedDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.propertyId != null">and ati.property_id = #{params.propertyId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.tenantId != null">and ati.tenant_id = #{params.tenantId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.revision != null and params.revision != '' ">and ati.revision = #{params.revision}</if>-->
+<!--                            -->
+<!--        </trim>-->
+
+<!--    </select>-->
+
+<!--    &lt;!&ndash; 分页查询，需要修改where之后的查询条件 &ndash;&gt;-->
+<!--    <select id="listPage" parameterType="map" resultType="com.webuild.alarm.api.entity.TriggerInfo">-->
+<!--        SELECT-->
+<!--        ati.id,ati.id,ati.alarm_fac_config_id,ati.trigger_type,ati.fac_category_id,ati.trigger_condition,ati.remark,ati.del_flag,ati.created_by,ati.created_date,ati.last_updated_by,ati.last_updated_date,ati.property_id,ati.tenant_id,ati.revision-->
+<!--        FROM alarm_trigger_info ati-->
+
+<!--        <trim prefix="where" prefixOverrides="and | or">-->
+<!--                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.id != null">and ati.id = #{params.id}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.alarmFacConfigId != null">and ati.alarm_fac_config_id = #{params.alarmFacConfigId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.triggerType != null and params.triggerType != '' ">and ati.trigger_type = #{params.triggerType}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.facCategoryId != null">and ati.fac_category_id = #{params.facCategoryId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.triggerCondition != null and params.triggerCondition != '' ">and ati.trigger_condition = #{params.triggerCondition}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.remark != null and params.remark != '' ">and ati.remark = #{params.remark}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.delFlag != null">and ati.del_flag = #{params.delFlag}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdBy != null">and ati.created_by = #{params.createdBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.createdDate != null">and ati.created_date = #{params.createdDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedBy != null">and ati.last_updated_by = #{params.lastUpdatedBy}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.lastUpdatedDate != null">and ati.last_updated_date = #{params.lastUpdatedDate}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.propertyId != null">and ati.property_id = #{params.propertyId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.tenantId != null">and ati.tenant_id = #{params.tenantId}</if>-->
+<!--                                            &lt;!&ndash;  名称  &ndash;&gt;-->
+<!--                                    <if test="params.revision != null and params.revision != '' ">and ati.revision = #{params.revision}</if>-->
+<!--                            -->
+<!--        </trim>-->
+
+<!--    </select>-->
+
+
+<!--    <resultMap id="triggerInfoMap" type="com.webuild.alarm.api.entity.TriggerInfo">-->
+<!--        <id property="id" column="id"/>-->
+<!--                                                                                    <result property="alarmFacConfigId" column="alarm_fac_config_id"/>-->
+<!--                                                <result property="triggerType" column="trigger_type"/>-->
+<!--                                                <result property="facCategoryId" column="fac_category_id"/>-->
+<!--                                                <result property="triggerCondition" column="trigger_condition"/>-->
+<!--                                                <result property="remark" column="remark"/>-->
+<!--                                                <result property="delFlag" column="del_flag"/>-->
+<!--                                                <result property="createdBy" column="created_by"/>-->
+<!--                                                <result property="createdDate" column="created_date"/>-->
+<!--                                                <result property="lastUpdatedBy" column="last_updated_by"/>-->
+<!--                                                <result property="lastUpdatedDate" column="last_updated_date"/>-->
+<!--                                                <result property="propertyId" column="property_id"/>-->
+<!--                                                <result property="tenantId" column="tenant_id"/>-->
+<!--                                                <result property="revision" column="revision"/>-->
+<!--                        </resultMap>-->
+</mapper>

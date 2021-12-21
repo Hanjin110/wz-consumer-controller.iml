@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.CostTypeMapper">
+    <resultMap id="Map" type="com.example.demo.dao.entity.CostType">
+        <id property="id" column="id"/>
+        <result property="costType" column="cost_type"/>
+
+    </resultMap>
+
+<select id="select" resultType="com.example.demo.dao.entity.CostType">
+    select  id from cost_type where cost_type='${costType}';
+</select>
+
+
+
+</mapper>
